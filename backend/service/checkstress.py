@@ -1,6 +1,8 @@
 import pickle
 from pydantic import ValidationError
 
+from schemas.model.stresslevel import StressLevel
+
 
 def predict_stress(form):
     try:
@@ -15,9 +17,11 @@ def predict_stress(form):
         # Faz a previsão usando o modelo
         predict = modelo.predict([[form.sleep_quality, form.headaches,
                                    form.academic_performance, form.study_load, form.extracurricular_activities]])
-
+        # Converte o resultado da previsão para o enum StressLevel
+        print(predict[0])
+        stress_enum = StressLevel(predict[0])
         # Retorna o resultado da previsão
-        return {'stress_level': int(predict[0])}, 200
+        return stress_enum.to_dict(), 200
 
     except ValidationError as ve:
         # Em caso de erro de validação, retorna uma mensagem de erro com código de status 422
