@@ -1,8 +1,13 @@
-# React + Vite
+# mvp-4-frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Instalar as dependências
 
-Currently, two official plugins are available:
+```
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Iniciar a aplicação (A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).)
+
+```
+npm run dev
+```
